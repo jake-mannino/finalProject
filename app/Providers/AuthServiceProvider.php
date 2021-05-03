@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,18 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //fill auth condition here
+        if (! $this->app->routesAreCached()) {
+
+            Passport:: routes ();
+
+            //Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
+            //^might not be necessary, already published in terminal using php artisan vendor:publish --tag=passport-config
+            Passport::tokensExpireIn(now()->addDays(15));
+            Passport::refreshTokensExpireIn(now()->addDays(30));
+            Passport::personalAccessTokensExpireIn(now()->addMonths(6));
+        }
+
+
+        //passport routes method here
     }
 }
