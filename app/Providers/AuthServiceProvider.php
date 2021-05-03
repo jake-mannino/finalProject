@@ -26,9 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
 
-            Passport:: routes ();
+            Passport::routes();
 
             //Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
             //^might not be necessary, already published in terminal using php artisan vendor:publish --tag=passport-config
