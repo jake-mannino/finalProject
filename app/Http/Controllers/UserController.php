@@ -30,7 +30,8 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'username' => 'required|string|starts_with:OG,O.G.,drPhill,Dr. Phill,DrPhill,lil,bigHomie,BigHomie,yung,Yung,Dr,Dr.,dr,Professor,professor,Sir,sir,Lord,lord,Shrek,shrek,getOuttaMySwamp|unique:App\Models\User,username',
-            'email' => 'nullable|email|max:64|unique:App\Models|User,email',
+            'email' => 'nullable|email|max:64',
+                                // unique:App\Models|User,email'
             'password' => 'required|string|min:8',
         ]);
 
