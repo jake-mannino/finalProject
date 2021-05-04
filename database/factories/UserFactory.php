@@ -33,6 +33,7 @@ class UserFactory extends Factory
 
         //        //have to bind call or this but laravel version to get scope right for validating faker data
         //    }
+        //below is ref from Usercontroller
         // 'name' => 'required|string',
         // 'username' => 'required|string|starts_with:OG,O.G.,drPhill,Dr. Phill,DrPhill,lil,bigHomie,BigHomie,yung,Yung,Dr,Dr.,dr,Professor,professor,Sir,sir,Lord,lord,Shrek,shrek,getOuttaMySwamp|unique:App\Models\User,username',
         // 'email' => 'nullable|email|max:64|unique:App\Models|User,email_address',
