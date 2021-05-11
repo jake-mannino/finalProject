@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'username' => 'required|string|starts_with:OG,O.G.,drPhill,Dr. Phill,DrPhill,lil,bigHomie,BigHomie,yung,Yung,Dr,Dr.,dr,Professor,professor,Sir,sir,Lord,lord,Shrek,shrek,getOuttaMySwamp|unique:App\Models\User,username',
+            'username' => 'required|string|starts_with:OG,O.G.,drPhill,Dr. Phill,DrPhill,lil,bigHomie,BigHomie,yung,Yung,Dr,Dr.Pepper,dr,Professor,professor,Sir,sir,Lord,lord,Shrek,shrek,getOuttaMySwamp|unique:App\Models\User,username',
             'email' => 'nullable|email|max:64',
                                 // unique:App\Models|User,email'
             'password' => 'required|string|min:8',
@@ -50,7 +50,7 @@ class UserController extends Controller
         $data['token'] =  $user->createToken('AudioTornado')->accessToken;
         $data['user_data'] = $user;
 
-        return response(['data' => $data, 'message' => 'Digital Qubit clone of your consciousess created successfully! Login asap or else your clone will be *repurposed*..', 'status' => true]);
+        return response(['data' => $data, 'message' => 'Qubit clone of your consciousess created successfully! Login asap or else your clone will be *repurposed*..', 'status' => true]);
     }
 
     /**
